@@ -1,0 +1,120 @@
+@import '../../utils.scss';
+
+.slider {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  overflow: hidden;
+  display: grid;
+  &__slides {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    
+  }
+
+  &__content {
+    width: 100vw;
+    max-width: 1920px;
+    position: relative;
+  }
+
+  &__title {
+    font-size: 32px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 16px;
+    padding-bottom: 20px;
+    border-bottom: 4px solid #FF4359;
+    text-align: center;
+    justify-self: center;
+  }
+
+  &__element {
+    min-width: 100%;
+    object-fit: cover;
+    max-height: 700px;
+    transition: transform 0.5s, opacity 0.5s;
+    opacity: 0.25;
+  }
+
+  &__next,
+  &__prev {
+    background: transparent;
+    border: none;
+    color: #AFAFAF;
+    cursor: pointer;
+
+    position: absolute;
+
+    transition: color 0.3s;
+    &:hover {
+      color:#FF4359;
+    }
+  }
+
+  &__next {
+    right: calc(15% - 50px);
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__prev {
+    left: calc(15% - 50px);
+    top: 50%;
+    transform: translate(50%, -50%)
+  }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  &__dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    background: #AFAFAF;
+    cursor: pointer;
+
+    transition: background 0.3s, transform 0.3s;
+    &--active {
+      background: #FF4359;
+      transform: scale(1.1);
+    }
+
+    &:hover {
+      background: #FF4359;
+    }
+  }
+
+  @include devices(tablet) {
+    margin-top: 300px;
+    margin-bottom: 100px;
+    
+    &__title {
+      font-size: 48px;
+      margin-bottom: 100px;
+    }
+
+    &__slides {
+      gap: 100px;
+    }
+
+    &__element {
+      min-width: 70%;
+    }
+
+    &__next {
+      transform: translate(50%, -50%);
+    }
+  
+    &__prev {
+      transform: translate(-50%, -50%)
+    }
+  }
+}
