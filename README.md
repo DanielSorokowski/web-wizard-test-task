@@ -21,7 +21,7 @@ The site has been deployed using Github pages can be previewed at this [DEMO LIN
 To run the project locally, you need to perform following operations:
 1. Clone the repo
    ```sh
-   git clone https://github.com/username/project.git
+   git clone https://github.com/DanielSorokowski/web-wizard-test-task.git
    ```
 2. Install NPM packages
    ```sh
